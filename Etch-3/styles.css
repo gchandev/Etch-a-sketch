@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative;
+
+}
+body::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    height: 100vh;
+    background-image: url("/Users/georgechan/repos/Etch-a-sketch/Etch-3/images/8-bit-sunset-wallpaper.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.board {
+    display: grid;
+    height: 500px;
+    width: 500px;
+    border: 1px solid black;
+    margin-top: 20px;
+    box-shadow: 4px 4px black;
+}
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+}
+
+.title {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: white;
+    font-size: 40px;
+    padding: 20px;
+    text-shadow: 3px 4px 1px rgba(0,0,0, 0.9);
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
