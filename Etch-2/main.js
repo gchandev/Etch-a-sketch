@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
         let size = getSize();
         createBoard(size);
     })
-    console.log("hi");
+
 })
 
 // Create board function to create grid.
