@@ -38,6 +38,7 @@ body::before {
     border: 1px solid black;
     margin-top: 20px;
     box-shadow: 4px 4px black;
+    background-color: white;
 }
 
 .buttons {

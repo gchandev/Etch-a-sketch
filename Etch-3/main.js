@@ -2,9 +2,9 @@ let select = document.querySelector(".size");
 let black = document.querySelector(".black");
 let random = document.querySelector(".random");
 let erase = document.querySelector(".erase");
-let reset = document.querySelector(".reset");
 
-let click = true;
+
+let click = false;
 let color = 'black';
 
 // Get the size board
@@ -38,6 +38,7 @@ function createBoard(size) {
 
     for (let i = 0; i < numDivs; i++) {
         let div = document.createElement("div");
+        div.className = 'divs';
         div.style.backgroundColor = 'white';
         board.insertAdjacentElement("beforeend", div);
         div.addEventListener("mouseover", colorDiv);
@@ -46,12 +47,14 @@ function createBoard(size) {
 
 // Select colors
 function colorDiv() {
-    if(color === 'random'){
-        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-    } else if (color === 'white') {
-        this.style.backgroundColor = 'white';
-    } else {
-        this.style.backgroundColor = 'black';
+    if(click) {
+        if(color === 'random'){
+            this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        } else if (color === 'white') {
+            this.style.backgroundColor = 'white';
+        } else {
+            this.style.backgroundColor = 'black';
+        }
     }
 }
 
@@ -60,8 +63,20 @@ function setColor(colorChoice) {
     color = colorChoice;
 }
 
-// create 'click' function 
-function
-
+// create 'click on click off' function 
+document.querySelector("body").addEventListener("click", function(e){
+    if(e.target.tagName != "BUTTON") {
+        click = !click;
+    }
+})
 
 // reset function
+function resetBoard() {
+    let reset = document.querySelectorAll(".divs");
+    reset.forEach((div) => {
+        div.style.backgroundColor = 'white';
+    });
+}
+
+
+
